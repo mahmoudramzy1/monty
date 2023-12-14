@@ -26,6 +26,8 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		line = strtok(line, "\n");
+		if (!line || line[0] == 0)
+			continue;
 		flag = execute_command(&head, line, line_number);
 	}
 	free_stack(&head);
