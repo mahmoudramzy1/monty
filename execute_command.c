@@ -53,6 +53,14 @@ int execute_command(stack_t **head, char *line, int line_number)
 		return (print_value(*head, line_number));
 	else if (strcmp(word, "pop") == 0)
 		return (stack_pop(head, &number, line_number));
+	else if (strcmp(word, "swap") == 0)
+		return (stack_swap(head, line_number));
+	else if (strcmp(word, "add") == 0)
+		return (stack_add(head, line_number));
+	else if (strcmp(word, "nop") == 0)
+		return (1);
+	else if (strcmp(word, "sub") == 0)
+		return (stack_sub(head, line_number));
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, word);
 	return (0);
 }

@@ -1,11 +1,22 @@
 
 
+push 1
+push 2
 
-
-
-
-push 1 3
-   push     2 4
 pall
-pop
+
+add
+
+pall
+
+push 4
+
+pall
+
+swap
+
+pall
+
+sub
+
 pall
