@@ -67,3 +67,52 @@ int stack_sub(stack_t **head, int line_number)
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 	return (0);
 }
+
+/**
+ * stack_div - divs two last elements
+ * @head: start of the stack
+ * @line_number: number of line
+ * Return: 1 if no error 0 if error
+*/
+
+int stack_div(stack_t **head, int line_number)
+{
+	int n, n1;
+
+	if (*head && (*head)->next)
+	{
+		stack_pop(head, &n, line_number);
+		stack_pop(head, &n1, line_number);
+		if (n == 0)
+		{
+			fprintf(stderr, "L%d: division by zero\n", line_number);
+			return (0);
+		}
+		stack_push(head, n1 / n);
+		return (1);
+	}
+	fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+	return (0);
+}
+
+/**
+ * stack_mul - mul two last elements
+ * @head: start of the stack
+ * @line_number: number of line
+ * Return: 1 if no error 0 if error
+*/
+
+int stack_mul(stack_t **head, int line_number)
+{
+	int n, n1;
+
+	if (*head && (*head)->next)
+	{
+		stack_pop(head, &n, line_number);
+		stack_pop(head, &n1, line_number);
+		stack_push(head, n1 * n);
+		return (1);
+	}
+	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+	return (0);
+}
