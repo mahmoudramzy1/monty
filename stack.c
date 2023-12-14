@@ -49,6 +49,26 @@ int print_values(stack_t *head)
 }
 
 /**
+ * print_value - just prints the top value
+ * @head: start
+ * @line_number: line with command
+ * Return: 1 or 0
+*/
+
+int print_value(stack_t *head, int line_number)
+{
+	if (head)
+	{
+		while (head->next)
+			head = head->next;
+		fprintf(stdout, "%d\n", head->n);
+		return (1);
+	}
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	return (0);
+}
+
+/**
  * free_stack - frees the stack
  * @head: start of stack
 */

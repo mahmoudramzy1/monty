@@ -40,6 +40,7 @@ typedef struct instruction_s
 
 int stack_push(stack_t **head, int number);
 int print_values(stack_t *head);
+int print_value(stack_t *head, int line_number);
 void free_stack(stack_t **head);
 int IsInt(char *word);
 int execute_command(stack_t **head, char *line, int line_number);

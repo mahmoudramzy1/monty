@@ -45,6 +45,8 @@ int execute_command(stack_t **head, char *line, int line_number)
 	}
 	else if (strcmp(word, "pall") == 0)
 		return (print_values(*head));
+	else if (strcmp(word, "pint") == 0)
+		return (print_value(*head, line_number));
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, word);
 	return (0);
 }
