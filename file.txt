@@ -1,0 +1,12 @@
+
+
+
+
+
+
+push 1 3
+   push     2 4
+                         pall 2   3 5
+push -1 +2
+push +1
+pall
