@@ -31,7 +31,7 @@ int IsInt(char *word)
 
 int execute_command(stack_t **head, char *line, int line_number)
 {
-	int index = 0;
+	int index = 0, number = 0;
 	char *word = 0;
 
 	while (line[index] == ' ')
@@ -51,6 +51,8 @@ int execute_command(stack_t **head, char *line, int line_number)
 		return (print_values(*head));
 	else if (strcmp(word, "pint") == 0)
 		return (print_value(*head, line_number));
+	else if (strcmp(word, "pop") == 0)
+		return (stack_pop(head, &number, line_number));
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, word);
 	return (0);
 }

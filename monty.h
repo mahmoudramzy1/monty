@@ -44,5 +44,5 @@ int print_value(stack_t *head, int line_number);
 void free_stack(stack_t **head);
 int IsInt(char *word);
 int execute_command(stack_t **head, char *line, int line_number);
-
+int stack_pop(stack_t **head, int *number, int line_number);
 #endif

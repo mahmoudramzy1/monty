@@ -84,3 +84,30 @@ void free_stack(stack_t **head)
 		free(*head);
 	*head = NULL;
 }
+
+/**
+ * stack_pop - pops tha last element
+ * @number: error detector
+ * @head: start of stack
+ * @line_number: number of line
+ * Return: 1 if no error otherwise 0
+*/
+
+int stack_pop(stack_t **head, int *number, int line_number)
+{
+	stack_t *move = *head;
+
+	if (*head)
+	{
+		while (move->next)
+		{
+			move = move->next;
+		}
+		*number = move->n;
+		move->prev->next = NULL;
+		free(move);
+		return (1);
+	}
+	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+	return (0);
+}
