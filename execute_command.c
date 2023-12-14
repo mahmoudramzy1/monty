@@ -10,6 +10,8 @@ int IsInt(char *word)
 {
 	int index = 0;
 
+	if (word[index] == '-' || word[index] == '+')
+		index++;
 	while ('0' <= word[index] && word[index] <= '9')
 	{
 		index++;
