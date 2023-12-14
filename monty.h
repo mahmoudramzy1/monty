@@ -48,5 +48,7 @@ int stack_pop(stack_t **head, int *number, int line_number);
 int stack_swap(stack_t **head, int line_number);
 int stack_add(stack_t **head, int line_number);
 int stack_sub(stack_t **head, int line_number);
+int stack_div(stack_t **head, int line_number);
+int stack_mul(stack_t **head, int line_number);
 
 #endif

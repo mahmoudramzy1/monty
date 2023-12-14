@@ -61,6 +61,10 @@ int execute_command(stack_t **head, char *line, int line_number)
 		return (1);
 	else if (strcmp(word, "sub") == 0)
 		return (stack_sub(head, line_number));
+	else if (strcmp(word, "div") == 0)
+		return (stack_div(head, line_number));
+	else if (strcmp(word, "mul") == 0)
+		return (stack_mul(head, line_number));
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, word);
 	return (0);
 }
