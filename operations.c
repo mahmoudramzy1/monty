@@ -15,8 +15,8 @@ int stack_swap(stack_t **head, int line_number)
 	{
 		stack_pop(head, &n, line_number);
 		stack_pop(head, &n1, line_number);
-		stack_push(head, n1);
 		stack_push(head, n);
+		stack_push(head, n1);
 		return (1);
 	}
 	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
