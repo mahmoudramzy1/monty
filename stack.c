@@ -106,6 +106,8 @@ int stack_pop(stack_t **head, int *number, int line_number)
 		*number = move->n;
 		if (move->prev)
 			move->prev->next = NULL;
+		else
+			*head = NULL;
 		free(move);
 		return (1);
 	}
