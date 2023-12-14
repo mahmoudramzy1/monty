@@ -61,7 +61,7 @@ int stack_sub(stack_t **head, int line_number)
 	{
 		stack_pop(head, &n, line_number);
 		stack_pop(head, &n1, line_number);
-		stack_push(head, n - n1);
+		stack_push(head, n1 - n);
 		return (1);
 	}
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
