@@ -34,6 +34,8 @@ int execute_command(stack_t **head, char *line, int line_number)
 
 	while (line[index] == ' ')
 		index++;
+	if (line[index] == 0)
+		return (1);
 	word = strtok(line, " \0");
 	if (strcmp(word, "push") == 0)
 	{

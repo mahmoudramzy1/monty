@@ -44,7 +44,7 @@ int print_values(stack_t *head)
 	if (!head)
 		return (1);
 	print_values(head->next);
-	printf("%d\n", head->n);
+	fprintf(stdout, "%d\n", head->n);
 	return (1);
 }
 
