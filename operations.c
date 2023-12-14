@@ -83,12 +83,12 @@ int stack_div(stack_t **head, int line_number)
 	{
 		stack_pop(head, &n, line_number);
 		stack_pop(head, &n1, line_number);
-		if (n == 0)
+		if (n1 == 0)
 		{
 			fprintf(stderr, "L%d: division by zero\n", line_number);
 			return (0);
 		}
-		stack_push(head, n1 / n);
+		stack_push(head, n / n1);
 		return (1);
 	}
 	fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
